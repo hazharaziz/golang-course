@@ -2,18 +2,21 @@ package main
 
 import "fmt"
 
+// declare and assign
+var y = 20
+
+// just declare and set zero value of 0 for type int
+var v int
+
 func main() {
+	// short declaration (inside func body)
 	x := 100
 	fmt.Println(x)
-	x = 100 + 1
-	fmt.Println(x)
-	y := 20 * 3
+
+	// var for both func body and outside
+	var z = 30
 	fmt.Println(y)
-	z := 30 / 5
 	fmt.Println(z)
-	v := "String variable"
 	fmt.Println(v)
-	w := true
-	fmt.Println(w)
 }
 
