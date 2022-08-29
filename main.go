@@ -1,22 +1,27 @@
 package main
 
-import "fmt"
-
-// declare and assign
-var y = 20
-
-// just declare and set zero value of 0 for type int
-var v int
+import (
+	"fmt"
+	"os"
+	"strings"
+)
 
 func main() {
-	// short declaration (inside func body)
-	x := 100
-	fmt.Println(x)
+	var s, sep string
+	for i := 1; i < len(os.Args); i++ {
+		s += sep + os.Args[i]
+		sep = " "
+	} 
+	fmt.Println(s)
 
-	// var for both func body and outside
-	var z = 30
-	fmt.Println(y)
-	fmt.Println(z)
-	fmt.Println(v)
+	s = ""
+	sep = ""
+
+	for _, arg := range os.Args[1:] {
+		s += sep + arg
+		sep = " "
+	} 
+	fmt.Println(s)
+
+	fmt.Println(strings.Join(os.Args[1:], " "))
 }
-
