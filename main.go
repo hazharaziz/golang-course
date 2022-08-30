@@ -1,25 +1,33 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-)
+import "fmt"
 
 func main() {
-	counts := make(map[string]int)
-	input := bufio.NewScanner(os.Stdin)
-	for input.Scan() {
-		text := input.Text()
-		if text == "exit" {
-			break
-		} 
-		counts[text]++
-	}
+	x := 1
+	y := &x
+	fmt.Println(*y)
+	fmt.Println("address:", y)
+	*y = 2
+	fmt.Println(x)
+	fmt.Println("address:", &x)
 
-	for line, n := range counts {
-		if n > 1 {
-			fmt.Printf("%d\t%s\n", n, line)
-		}
-	}
+	p := 1
+	incrementByPointer(&p)
+	fmt.Println(p)
+
+	p = 1
+	incrementByValue(p)
+	fmt.Println(p)
 }
+
+
+func incrementByValue(p int) int {
+	p++
+	return p
+}
+
+func incrementByPointer(p *int) int {
+	*p++
+	return *p
+}
+
