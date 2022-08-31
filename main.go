@@ -3,12 +3,21 @@ package main
 import "fmt"
 
 func main() {
-	x := "hello!"
-	for i := 0; i < len(x); i++ {
-		x := x[i]
-		if x != '!' {
-			x := x + 'A' - 'a'
-			fmt.Printf("%c", x) // "HELLO" (one letter per iteration)
-		}
+	var arr [4]byte = [4]byte{10, 20, 30, 40}
+	fmt.Println("Before")
+	for i, v := range arr {
+		fmt.Printf("%d: %d\n", i, v)
+	}
+
+	fmt.Println("")
+
+	zero(&arr)
+	fmt.Println("After")
+	for i, v := range arr {
+		fmt.Printf("%d: %d\n", i, v)
 	}
 }
+
+func zero(ptr *[4]byte) {
+	*ptr = [4]byte{}
+} 
