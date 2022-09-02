@@ -2,18 +2,20 @@ package main
 
 import "fmt"
 
-type myType int
+const (
+	_ = iota
+	// kb = 1024
+	kb = 1 << (iota * 10)
 
-var x myType
-var y int
+	// mb = kb * 1024
+	mb = 1 << (iota * 10)
+
+	// gb = mb * 1024
+	gb = 1 << (iota * 10)
+)
 
 func main() {
-	fmt.Println(x)
-	fmt.Printf("%T\n", x)
-
-	x = 42
-	fmt.Println("x: ", x)
-
-	y = int(x)
-	fmt.Println("y: ", y)
+	fmt.Printf("%d\t\t%b\n", kb, kb)
+	fmt.Printf("%d\t\t%b\n", mb, mb)
+	fmt.Printf("%d\t%b\n", gb, gb)
 }
