@@ -2,26 +2,14 @@ package main
 
 import "fmt"
 
-var y = "Hello"
-
-type text string
-
-var x text = "Hi"
-
 func main() {
-	fmt.Println(y)
-	fmt.Printf("%T\n", y)
+	x := 42
+	y := "James Bond"
+	z := true
+
+	fmt.Println(x, y, z)
+	fmt.Println("------")
 	fmt.Println(x)
-	fmt.Printf("%T\n", x)
-
-	// conversion
-
-	y = string(x)
 	fmt.Println(y)
-	fmt.Printf("%T\n", y)
-
-	x = text(y)
-	fmt.Println(x)
-	fmt.Printf("%T\n", x)
-
+	fmt.Println(z)
 }
