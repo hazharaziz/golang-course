@@ -3,75 +3,43 @@ package main
 import "fmt"
 
 func main() {
+
 	// exercise #1
-	// for i := 0; i <= 10000; i++ {
-	// 	fmt.Println(i)
+	// x := [5]int{23, 5, 21, 53, 66}
+	// for i, v := range x {
+	// 	fmt.Println(i, v)
 	// }
+	// fmt.Printf("%T\n", x)
 
 	// exercise #2
-	// index := 1
-	// for i := 65; i <= 90; i++ {
-	// 	fmt.Println(index)
-	// 	for j := 0; j < 3; j++ {
-	// 		fmt.Printf("\t\t%#U\n", i)
-	// 	}
-	// 	index++
+	// y := []int{23, 5, 21, 53, 66, 10, 11, 222, 25, 90}
+	// for i, v := range y {
+	// 	fmt.Println(i, v)
 	// }
+	// fmt.Printf("%T\n", y)
 
 	// exercise #3
-	// year := 2000
-	// for year <= 2022 {
-	// 	if year > 2022 {
-	// 		break
-	// 	}
-	// 	fmt.Println(year)
-	// 	year++
-	// }
+	// z := []int{42, 43, 44, 45, 46, 47, 48, 49, 50, 51}
+	// fmt.Println(z[:5])
+	// fmt.Println(z[5:])
+	// fmt.Println(z[2:7])
+	// fmt.Println(z[1:6])
 
 	// exercise #4
-	// year := 2000
-	// for year <= 2022 {
-	// 	fmt.Println(year)
-	// 	year++
-	// }
+	// a := []int{42, 43, 44, 45, 46, 47, 48, 49, 50, 51}
+	// a = append(a, 52)
+	// fmt.Println(a)
+
+	// a = append(a, 53, 54, 55)
+	// fmt.Println(a)
+
+	// b := []int{56, 57, 58, 59, 60}
+	// a = append(a, b...)
+	// fmt.Println(a)
 
 	// exercise #5
-	// for i := 10; i <= 100; i++ {
-	// 	fmt.Printf("%v\n", i%4)
-	// }
+	c := []int{42, 43, 44, 45, 46, 47, 48, 49, 50, 51}
+	c = append(c[0:3], c[6:]...)
+	fmt.Println(c)
 
-	// exercise #6, #7
-	// x := 33
-	// fmt.Println("using if statement")
-	// if x < 32 {
-	// 	fmt.Println("x is less than 32")
-	// } else if x == 32 {
-	// 	fmt.Println("x is equal to 32")
-	// } else {
-	// 	fmt.Println("x is greater than 32")
-	// }
-
-	// exercise #8
-	// y := 40
-	// switch {
-	// case y < 32:
-	// 	fmt.Println("y is less than 32")
-	// case y == 32:
-	// 	fmt.Println("y is equal to 32")
-	// case y > 32:
-	// 	fmt.Println("y is greater than 32")
-	// }
-
-	// exercise #9
-	favSport := "swimming"
-	switch favSport {
-	case "football":
-		fmt.Println("1")
-	case "volleyball":
-		fmt.Println("2")
-	case "basketball":
-		fmt.Println("3")
-	case "swimming":
-		fmt.Println("4")
-	}
 }
