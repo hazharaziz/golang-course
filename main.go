@@ -2,22 +2,26 @@ package main
 
 import "fmt"
 
+var y = "Hello"
+
+type text string
+
+var x text = "Hi"
+
 func main() {
-	var arr [4]byte = [4]byte{10, 20, 30, 40}
-	fmt.Println("Before")
-	for i, v := range arr {
-		fmt.Printf("%d: %d\n", i, v)
-	}
+	fmt.Println(y)
+	fmt.Printf("%T\n", y)
+	fmt.Println(x)
+	fmt.Printf("%T\n", x)
 
-	fmt.Println("")
+	// conversion
 
-	zero(&arr)
-	fmt.Println("After")
-	for i, v := range arr {
-		fmt.Printf("%d: %d\n", i, v)
-	}
+	y = string(x)
+	fmt.Println(y)
+	fmt.Printf("%T\n", y)
+
+	x = text(y)
+	fmt.Println(x)
+	fmt.Printf("%T\n", x)
+
 }
-
-func zero(ptr *[4]byte) {
-	*ptr = [4]byte{}
-} 
