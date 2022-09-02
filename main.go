@@ -2,11 +2,14 @@ package main
 
 import "fmt"
 
-var x int = 42
-var y string = "James Bond"
-var z bool = true
+type myType int
+
+var x myType
 
 func main() {
-	s := fmt.Sprintln(x, y, z)
-	fmt.Println(s)
+	fmt.Println(x)
+	fmt.Printf("%T\n", x)
+
+	x = 42
+	fmt.Println(x)
 }
