@@ -1,29 +1,47 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-type employee struct {
-	person
-	employeeId int
+type vehicle struct {
+	doors int
+	color string
 }
 
-type person struct {
-	firstName              string
-	lastName               string
-	favoriteIceCreamFlavor []string
+type truck struct {
+	vehicle
+	fourWheel bool
+}
+
+type sedan struct {
+	vehicle
+	luxury bool
 }
 
 func main() {
-	// exercise #1
-	p1 := person{
-		firstName:              "Hazhar",
-		lastName:               "Aziz",
-		favoriteIceCreamFlavor: []string{"chocolate", "vanilla"},
+	// exercise #3
+	myTruck := truck{
+		vehicle: vehicle{
+			doors: 2,
+			color: "black",
+		},
+		fourWheel: true,
 	}
+	fmt.Println("------- truck --------")
+	fmt.Println("doors:", myTruck.doors)
+	fmt.Println("color:", myTruck.color)
+	fmt.Println("fourWheel:", myTruck.fourWheel)
 
-	fmt.Println(p1.firstName)
-	fmt.Println(p1.lastName)
-	for _, flavour := range p1.favoriteIceCreamFlavor {
-		fmt.Println(flavour)
+	mySedan := sedan{
+		vehicle: vehicle{
+			doors: 4,
+			color: "white",
+		},
+		luxury: true,
 	}
+	fmt.Println("------- sedan --------")
+	fmt.Println("doors:", mySedan.doors)
+	fmt.Println("color:", mySedan.color)
+	fmt.Println("luxury:", mySedan.luxury)
 }
