@@ -8,19 +8,22 @@ type employee struct {
 }
 
 type person struct {
-	firstName string
-	lastName  string
+	firstName              string
+	lastName               string
+	favoriteIceCreamFlavor []string
 }
 
 func main() {
-	p1 := struct {
-		firstName string
-		lastName  string
-	}{
-		firstName: "Hazhar",
-		lastName:  "Aziz",
+	// exercise #1
+	p1 := person{
+		firstName:              "Hazhar",
+		lastName:               "Aziz",
+		favoriteIceCreamFlavor: []string{"chocolate", "vanilla"},
 	}
 
-	fmt.Println(p1)
-	fmt.Println(p1.firstName, p1.lastName)
+	fmt.Println(p1.firstName)
+	fmt.Println(p1.lastName)
+	for _, flavour := range p1.favoriteIceCreamFlavor {
+		fmt.Println(flavour)
+	}
 }
