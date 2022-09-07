@@ -3,9 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	anonymousFunc := func(number int) {
-		fmt.Println("anonymous func")
-		fmt.Println(number)
+	x := foo()
+	y := x()
+	fmt.Println(y)
+}
+
+func foo() func() int {
+	return func() int {
+		return 42
 	}
-	anonymousFunc(42)
 }
