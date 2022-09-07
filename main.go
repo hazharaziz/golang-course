@@ -1,47 +1,20 @@
 package main
 
-import (
-	"fmt"
-)
-
-type vehicle struct {
-	doors int
-	color string
-}
-
-type truck struct {
-	vehicle
-	fourWheel bool
-}
-
-type sedan struct {
-	vehicle
-	luxury bool
-}
+import "fmt"
 
 func main() {
-	// exercise #3
-	myTruck := truck{
-		vehicle: vehicle{
-			doors: 2,
-			color: "black",
-		},
-		fourWheel: true,
-	}
-	fmt.Println("------- truck --------")
-	fmt.Println("doors:", myTruck.doors)
-	fmt.Println("color:", myTruck.color)
-	fmt.Println("fourWheel:", myTruck.fourWheel)
+	x := foo()
+	y, z := bar()
 
-	mySedan := sedan{
-		vehicle: vehicle{
-			doors: 4,
-			color: "white",
-		},
-		luxury: true,
-	}
-	fmt.Println("------- sedan --------")
-	fmt.Println("doors:", mySedan.doors)
-	fmt.Println("color:", mySedan.color)
-	fmt.Println("luxury:", mySedan.luxury)
+	fmt.Println(x)
+	fmt.Println(y)
+	fmt.Println(z)
+}
+
+func foo() int {
+	return 20
+}
+
+func bar() (int, string) {
+	return 30, "Hello"
 }
