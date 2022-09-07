@@ -3,18 +3,22 @@ package main
 import "fmt"
 
 func main() {
-	x := foo()
-	y, z := bar()
+	numbers := []int{1, 2, 3, 4}
+	total := foo(numbers...)
+	fmt.Println(total)
 
-	fmt.Println(x)
-	fmt.Println(y)
-	fmt.Println(z)
+	otherTotal := bar(numbers)
+	fmt.Println(otherTotal)
 }
 
-func foo() int {
-	return 20
+func foo(numbers ...int) int {
+	sum := 0
+	for _, value := range numbers {
+		sum += value
+	}
+	return sum
 }
 
-func bar() (int, string) {
-	return 30, "Hello"
+func bar(numbers []int) int {
+	return foo(numbers...)
 }
