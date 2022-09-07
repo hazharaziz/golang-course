@@ -2,15 +2,21 @@ package main
 
 import "fmt"
 
-func main() {
-	defer foo()
-	fmt.Println("in main func")
-	fmt.Println("func main exits")
+type person struct {
+	first string
+	last  string
+	age   int
 }
 
-func foo() {
-	defer func() {
-		fmt.Println("in foo defer")
-	}()
-	fmt.Println("func foo executing")
+func (p person) speak() {
+	fmt.Println("Hi, I'm", p.first, p.last, "and I am", p.age, "years of age")
+}
+
+func main() {
+	p1 := person{
+		first: "Hazhar",
+		last:  "Aziz",
+		age:   22,
+	}
+	p1.speak()
 }
