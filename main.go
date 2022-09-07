@@ -1,43 +1,11 @@
 package main
 
-import (
-	"fmt"
-	"math"
-)
-
-type square struct {
-	sideLength float64
-}
-
-type circle struct {
-	radius float64
-}
-
-type shape interface {
-	calculateArea() float64
-}
-
-func (s square) calculateArea() float64 {
-	return s.sideLength * s.sideLength
-}
-
-func (c circle) calculateArea() float64 {
-	return math.Pi * (c.radius * c.radius)
-}
-
-func info(s shape) {
-	fmt.Println(s.calculateArea())
-}
+import "fmt"
 
 func main() {
-	s := square{
-		sideLength: 10,
+	anonymousFunc := func(number int) {
+		fmt.Println("anonymous func")
+		fmt.Println(number)
 	}
-
-	c := circle{
-		radius: 3,
-	}
-
-	info(s)
-	info(c)
+	anonymousFunc(42)
 }
