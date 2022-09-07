@@ -3,22 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	numbers := []int{1, 2, 3, 4}
-	total := foo(numbers...)
-	fmt.Println(total)
-
-	otherTotal := bar(numbers)
-	fmt.Println(otherTotal)
+	defer foo()
+	fmt.Println("in main func")
+	fmt.Println("func main exits")
 }
 
-func foo(numbers ...int) int {
-	sum := 0
-	for _, value := range numbers {
-		sum += value
-	}
-	return sum
-}
-
-func bar(numbers []int) int {
-	return foo(numbers...)
+func foo() {
+	defer func() {
+		fmt.Println("in foo defer")
+	}()
+	fmt.Println("func foo executing")
 }
